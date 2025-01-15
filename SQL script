@@ -1,0 +1,15 @@
+CREATE DATABASE employeedb;
+USE employeedb;
+
+CREATE TABLE employee (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    designation VARCHAR(100) NOT NULL
+);
+
+CREATE TABLE employee_skills (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    employee_id INT,
+    skill VARCHAR(100),
+    FOREIGN KEY (employee_id) REFERENCES employee(id) ON DELETE CASCADE
+);
